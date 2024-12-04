@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Keyz Chain</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .navbar .logo {
+            font-family: 'Roboto', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .navbar ul li {
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            color: #ffa500;
+        }
+
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .burger-menu div {
+            background-color: white;
+            height: 3px;
+            margin: 4px 0;
+            width: 25px;
+        }
+
+        /* About section */
+        .about {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(120deg, #ffa500, #ff6347);
+            color: white;
+        }
+
+        .about .logo-img {
+            width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 50%;
+        }
+
+        .about h1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .about p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            color: #f9f9f9;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .join-btn, .team-btn {
+            background-color: #333;
+            color: white;
+            padding: 15px 30px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .join-btn:hover, .team-btn:hover {
+            background-color: #ffa500;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 50px;
+                right: 20px;
+                width: 200px;
+                border-radius: 5px;
+            }
+
+            .navbar ul.active {
+                display: flex;
+            }
+
+            .burger-menu {
+                display: flex;
+            }
+
+            .navbar .logo {
+                font-size: 26px;
+            }
+
+            .about h1 {
+                font-size: 28px;
+            }
+
+            .about p {
+                font-size: 16px;
+            }
+
+            .join-btn, .team-btn {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+
+            .btn-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Keyz Chain</div>
+        <ul id="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="https://script.google.com/macros/s/AKfycbwppeFPQDB2AtZ53NJIMlz9mCkTlJyuwRMRkcjZ2zDMB3WQKqa3sTabR-QCXH6kWD0U/exec">Our Ambassadors</a></li>
+            <li><a href="#events">Event Radar</a></li>
+            <li><a href="#helpfix">HelpFix</a></li>
+            <li><a href="dedication.html">Dedication</a></li>
+        </ul>
+        <div class="burger-menu" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section class="about" id="home">
+        <img src="https://lh3.googleusercontent.com/a/ACg8ocJeQ7G4BKaJsF5mZex5Mn0vRXjSOEVPEb0I15PYIX5HDxU1-Jo=s360-c-no" alt="Logo" class="logo-img">
+        <h1>THE CHAIN CHAT<br>
+            What & Why the Chain is ⛓</h1>
+        <p>
+            The Chain: "A place for students, by students, and of students" 👩🏻‍🎓. A gateway to opportunities and collaboration for a bright future 🔅. Our mission is to provide an easy and professional platform for our "Keyz Ambassadors" who are looking for opportunities and seeking effective, responsible teams 🌸. Find opportunities based on your skills and collaborate with like-minded individuals and personalities.<br>
+
+            KEY FEATURES
+
+            <br>Soft Cards: Showcase a student's name, skills, and key information, offering a quick and impactful personal profile on our platform.
+
+            Event Radar: Your go-to hub for discovering and staying updated on upcoming technical and non-technical competitions and events. Also, the events in <b>JNCT Bhopal</b> will be featured.
+
+            HELP FIX: A dedicated space featuring video clips for learning and resolving user doubts with ease.
+        </p>
+        <div class="btn-container">
+          <button class="join-btn" onclick="window.location.href='https://script.google.com/macros/s/AKfycbx4vM3Z2cgYgUG6sHgghqswREL8eWVnsE0ZPKagxLQ63HySbXugEqm4f6-hHg0IUUNK0A/exec'">Join the Chain</button>
+          <button class="team-btn" onclick="window.location.href='https://script.google.com/macros/s/AKfycbwppeFPQDB2AtZ53NJIMlz9mCkTlJyuwRMRkcjZ2zDMB3WQKqa3sTabR-QCXH6kWD0U/exec'">Make Your Team Now!</button>
+      </div>
+      
+    </section>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
