@@ -88,6 +88,26 @@
       background-color: rgba(255, 255, 255, 0.1);
       border-top: 2px solid white;
     }
+    /* Button Styling */
+    #backToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fa6146;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 20px;
+            cursor: pointer;
+            display: block;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #backToTopBtn:hover {
+            background-color: #ff7f50;
+        }
 
     @media screen and (max-width: 768px) {
       .event-title {
@@ -127,7 +147,28 @@
     </div>
    
   </div>
+  <button id="backToTopBtn" onclick="goToPage()">Back/Home</button>
+  
+
+
+  
 
   <footer>Powered by Event Radar | Bringing Hackathons to You  ~THE KEYZ</footer>
+  <script>
+  function goToPage() {
+            window.location.href = "https://keyzchain.github.io/KeyzChain/"; // Replace with the URL you want
+        }
+
+        
+
+        function showBackToTopButton() {
+            var button = document.getElementById("backToTopBtn");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                button.style.display = "block";
+            } else {
+                button.style.display = "none";
+            }
+        }
+  </script>
 </body>
 </html>
