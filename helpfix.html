@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpFix</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f4f4f9;
+        }
+            /* Navbar Styles */
+    .navbar {
+      background-color: #000;
+      color: white;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .navbar .menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar .menu a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+    }
+
+    .navbar .menu a:hover {
+      color: yellow; /* Glowing effect color */
+      text-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow, 0 0 40px yellow, 0 0 50px yellow; /* Glowing effect */
+    }
+
+    .burger-menu {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .burger-menu div {
+      width: 30px;
+      height: 3px;
+      background-color: white;
+    }
+
+    /* Responsive Navbar */
+    @media screen and (max-width: 768px) {
+      .navbar .menu {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #000;
+        padding: 20px;
+        width: 200px;
+      }
+
+      .navbar.active .menu {
+        display: flex;
+      }
+
+      .burger-menu {
+        display: flex;
+      }
+    }
+
+        
+
+        /* Header Styling */
+        header {
+            background: linear-gradient(to right, #ffa500, #ff6347);
+            color: white;
+            padding: 20px 10%;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1rem;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 40px 10%;
+        }
+
+        .about {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .about h2 {
+            font-size: 2rem;
+            color: #0066cc;
+        }
+
+        .about p {
+            margin-top: 10px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Video Section */
+        .videos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .video-card {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .video-card iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+        }
+
+        .video-card h3 {
+            padding: 10px;
+            background: #f18533;
+            color: white;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(to right, #ffa500, #ff6347);
+            border-top: 2px solid #0066cc;
+        }
+
+        .contact h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #0066cc;
+        }
+
+        .contact p {
+            font-size: 1rem;
+            color: #fffefe;
+        }
+
+        .contact a {
+            color: #0066cc;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #0066cc;
+            color: white;
+            font-size: 0.9rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Ensure the page fills the viewport */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .videos {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .video-card {
+                width: 100%;
+                max-width: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">KeyzChain</div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="ambassadors.html">Our Ambassadors</a>
+      <a href="EventRedar.html">Event Radar</a>
+      <a href="helpfix.html">HelpFix</a>
+      <a href="dedication.html">Dedication</a>
+    </div>
+    <div class="burger-menu" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+    
+
+    <header>
+        <h1>Welcome to HelpFix</h1>
+        <p>Your ultimate guide to navigate and solve team-building challenges, events, and announcements.</p>
+    </header>
+
+    <section class="about">
+        <h2>About HelpFix</h2>
+        <p>HelpFix is a one-stop platform designed to provide tips for winning, guidance on building effective teams, resolving event-related confusions, sharing learning resources, and announcing important updates.</p>
+    </section>
+
+    <section class="videos">
+        <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="How to Build a Team"></iframe>
+            <h3>How to Build a Team</h3>
+        </div>
+        <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Winning Strategies"></iframe>
+            <h3>Winning Strategies</h3>
+        </div>
+        <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/V-_O7nl0Ii0" title="Event Management Tips"></iframe>
+            <h3>Event Tips</h3>
+        </div>
+        <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/2Vv-BfVoq4g" title="Important Announcements"></iframe>
+            <h3>Important Announcements</h3>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <p>Have questions or need support? Reach out to us via email:</p>
+        <p>
+            <a href="mailto:thekeyz.enquiry@gmail.com?subject=Support%20Request&body=Hello%2C%20I%20need%20help%20with...">
+                thekeyz.enquiry@gmail.com
+            </a>
+        </p>
+        <p>Or copy this email: <strong>thekeyz.enquiry@gmail.com</strong></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 HelpFix. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+          document.querySelector('.navbar').classList.toggle('active');
+        }
+      </script>
+</body>
+</html>
