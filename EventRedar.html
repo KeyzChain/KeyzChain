@@ -44,11 +44,9 @@
         }
 
         .navbar .menu a:hover {
-    color: yellow; /* Text color on hover */
-    text-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow, 0 0 40px yellow, 0 0 50px yellow; /* Glowing text */
-    background-color: rgba(0, 0, 0, 0.2); /* Optional background effect */
-}
-
+            color: yellow;
+            text-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow;
+        }
 
         .burger-menu {
             display: none;
@@ -97,7 +95,7 @@
         }
 
         header span {
-            color: #00aaff; /* Blue accent for "Event Radar" */
+            color: #00aaff;
         }
 
         .container {
@@ -123,7 +121,7 @@
         .event-title {
             font-size: 2em;
             font-weight: bold;
-            color: #ffa500; /* Orange accent for titles */
+            color: #ffa500;
             margin-bottom: 15px;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
         }
@@ -160,20 +158,6 @@
             background-color: rgba(255, 255, 255, 0.1);
             border-top: 2px solid white;
         }
-
-        @media screen and (max-width: 768px) {
-            .event-title {
-                font-size: 1.6em;
-            }
-
-            .event-description {
-                font-size: 1em;
-            }
-
-            .event-link {
-                font-size: 1em;
-            }
-        }
     </style>
 </head>
 
@@ -182,11 +166,11 @@
     <div class="navbar">
         <div class="logo">KeyzChain</div>
         <div class="menu">
-            <a href="index.html">Home</a>
-            <a href="ambassadors.html">Our Ambassadors</a>
-            <a href="EventRedar.html">Event Radar</a>
-            <a href="helpfix.html">HelpFix</a>
-            <a href="dedication.html">Dedication</a>
+            <a href="#">Home</a>
+            <a href="#">Our Ambassadors</a>
+            <a href="#">Event Radar</a>
+            <a href="#">HelpFix</a>
+            <a href="#">Dedication</a>
         </div>
         <div class="burger-menu" onclick="toggleMenu()">
             <div></div>
@@ -200,31 +184,54 @@
 
     <!-- Content -->
     <div class="container">
-        <!-- Event 1: Collabfest Hackathon -->
+        <!-- Collabfest Hackathon at Top -->
         <div class="event-card">
-            <div class="event-title">Collabfest Hackathon 2024</div>
+            <div class="event-title">Collabfest'24</div>
             <div class="event-description">
-                Join the most awaited *Collabfest Hackathon 2024*, where innovators, coders, and dreamers come together to solve real-world challenges. Showcase your skills, connect with experts, and win exciting prizes!
+                Join the most awaited Collabfest'24, A Day full of joy and thrilling experience will happen in JNCT bhopal,specially dedicated to "Our Ambassadors".Three Events are-> <b>1. who can code faster.</b> </b>   <b>2. Idea Machine Presentation. </b>  <b>3. Collab Logo</b> 
             </div>
-            <a class="event-link" href="https://www.collabfest.com/register" target="_blank">Register Now</a>
+            <a class="event-link" href="https://www.collabfest.com/register" target="_blank">Registration starting soon</a>
         </div>
 
-        <!-- Placeholder for future entries -->
-        <!-- Copy this block to add more events -->
+        <!-- Other Events -->
         <div class="event-card">
-            <div class="event-title">Event Name</div>
-            <div class="event-description">Brief details about the event go here.</div>
-            <a class="event-link" href="Event Link Here" target="_blank">Register Now</a>
+            <div class="event-title">PEC Hacks 2.0</div>
+            <div class="event-description">
+                Date: December 28, 2024<br>
+                Venue: Panimalar Engineering College, Chennai<br>
+                Focus: Software Development Challenges<br>
+                Eligibility: College students; prior programming knowledge preferred<br>
+            </div>
+            <a class="event-link" href="https://www.knowafest.com/college-fests/events/pec-hacks-panimalar-2024" target="_blank">Register Now</a>
+        </div>
+
+        <div class="event-card">
+            <div class="event-title">National Conference on AI and ML</div>
+            <div class="event-description">
+                Date: December 27, 2024<br>
+                Venue: Erode Sengunthar Engineering College, Erode<br>
+                Eligibility: Open to students and professionals<br>
+            </div>
+            <a class="event-link" href="https://www.knowafest.com/college-fests/events/erode-sengunthar-ai-conference-2024" target="_blank">Register Now</a>
+        </div>
+
+        <div class="event-card">
+            <div class="event-title">Kalaimagal Short Film Festival</div>
+            <div class="event-description">
+                Date: December 28, 2024<br>
+                Venue: Coimbatore, Tamil Nadu<br>
+                Focus: Short Films on Social Themes<br>
+                Eligibility: Open to all students<br>
+            </div>
+            <a class="event-link" href="https://www.knowafest.com/college-fests/events/kalaimagal-short-film-festival-2024" target="_blank">Register Now</a>
         </div>
     </div>
 
     <footer>2024 Event Radar. All rights reserved</footer>
 
     <script>
-        // Burger menu toggle function
         function toggleMenu() {
-            const navbar = document.querySelector('.navbar');
-            navbar.classList.toggle('active');
+            document.querySelector('.navbar').classList.toggle('active');
         }
     </script>
 </body>
