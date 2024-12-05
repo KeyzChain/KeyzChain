@@ -1,174 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Event Radar - Collabfest</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background: linear-gradient(120deg, #ffa500, #ff6347);
-      color: white;
-      box-sizing: border-box;
-    }
-
-    header {
-      text-align: center;
-      padding: 20px;
-      font-size: 2.8em;
-      font-weight: bold;
-      background-color: rgba(255, 255, 255, 0.1);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      border-bottom: 2px solid white;
-    }
-
-    header span {
-      color: #00aaff; /* Blue accent for "Event Radar" */
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    .event-card {
-      background: rgba(255, 255, 255, 0.15);
-      padding: 25px;
-      border-radius: 10px;
-      margin: 20px 0;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .event-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-    }
-
-    .event-title {
-      font-size: 2em;
-      font-weight: bold;
-      color: #ffa500; /* Orange accent for titles */
-      margin-bottom: 15px;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-    }
-
-    .event-description {
-      font-size: 1.2em;
-      line-height: 1.6;
-      margin-bottom: 20px;
-      color: #ffdbc5;
-    }
-
-    .event-link {
-      text-decoration: none;
-      color: #007bff;
-      font-weight: bold;
-      font-size: 1.1em;
-      border: 2px solid #007bff;
-      padding: 10px 20px;
-      border-radius: 30px;
-      transition: all 0.3s ease;
-    }
-
-    .event-link:hover {
-      background-color: #007bff;
-      color: white;
-      transform: scale(1.1);
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 1em;
-      padding: 15px;
-      background-color: rgba(255, 255, 255, 0.1);
-      border-top: 2px solid white;
-    }
-    /* Button Styling */
-    #backToTopBtn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #fa6146;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Radar - Collabfest</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(120deg, #ffa500, #ff6347);
             color: white;
-            border: none;
-            border-radius: 50%;
+            box-sizing: border-box;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #000;
+            color: white;
             padding: 15px;
-            font-size: 20px;
-            cursor: pointer;
-            display: block;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        #backToTopBtn:hover {
-            background-color: #ff7f50;
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
         }
 
-    @media screen and (max-width: 768px) {
-      .event-title {
-        font-size: 1.6em;
-      }
-
-      .event-description {
-        font-size: 1em;
-      }
-
-      .event-link {
-        font-size: 1em;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header><span>Event Radar</span></header>
-
-  <div class="container">
-    <!-- Event 1: Collabfest Hackathon -->
-    <div class="event-card">
-      <div class="event-title">Collabfest Hackathon 2024</div>
-      <div class="event-description">
-        Join the most awaited **Collabfest Hackathon 2024**, where innovators, coders, and dreamers come together to solve real-world challenges. Showcase your skills, connect with experts, and win exciting prizes!
-      </div>
-      <a class="event-link" href="https://www.collabfest.com/register" target="_blank">Register Now</a>
-    </div>
-
-    <!-- Placeholder for future entries -->
-    <!-- Copy this block to add more events -->
-    
-    <div class="event-card">
-      <div class="event-title">Event Name</div>
-      <div class="event-description">Brief details about the event go here.</div>
-      <a class="event-link" href="Event Link Here" target="_blank">Register Now</a>
-    </div>
-   
-  </div>
-  <button id="backToTopBtn" onclick="goToPage()">Back/Home</button>
-  
-
-
-  
-
-  <footer>Powered by Event Radar | Bringing Hackathons to You  ~THE KEYZ</footer>
-  <script>
-  function goToPage() {
-            window.location.href = "https://keyzchain.github.io/KeyzChain/"; // Replace with the URL you want
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
         }
 
-        
+        .navbar .menu a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
 
-        function showBackToTopButton() {
-            var button = document.getElementById("backToTopBtn");
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                button.style.display = "block";
-            } else {
-                button.style.display = "none";
+        .navbar .menu a:hover {
+    color: yellow; /* Text color on hover */
+    text-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow, 0 0 40px yellow, 0 0 50px yellow; /* Glowing text */
+    background-color: rgba(0, 0, 0, 0.2); /* Optional background effect */
+}
+
+
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .burger-menu div {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+        }
+
+        /* Responsive Navbar */
+        @media screen and (max-width: 768px) {
+            .navbar .menu {
+                display: none;
+                flex-direction: column;
+                gap: 15px;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: #000;
+                padding: 20px;
+                width: 200px;
+            }
+
+            .navbar.active .menu {
+                display: flex;
+            }
+
+            .burger-menu {
+                display: flex;
             }
         }
-  </script>
+
+        header {
+            text-align: center;
+            padding: 20px;
+            font-size: 2.8em;
+            font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.1);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            border-bottom: 2px solid white;
+        }
+
+        header span {
+            color: #00aaff; /* Blue accent for "Event Radar" */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .event-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .event-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .event-title {
+            font-size: 2em;
+            font-weight: bold;
+            color: #ffa500; /* Orange accent for titles */
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+        }
+
+        .event-description {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #ffdbc5;
+        }
+
+        .event-link {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            font-size: 1.1em;
+            border: 2px solid #007bff;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .event-link:hover {
+            background-color: #007bff;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1em;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-top: 2px solid white;
+        }
+
+        @media screen and (max-width: 768px) {
+            .event-title {
+                font-size: 1.6em;
+            }
+
+            .event-description {
+                font-size: 1em;
+            }
+
+            .event-link {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">KeyzChain</div>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">Our Ambassadors</a>
+            <a href="#">Event Radar</a>
+            <a href="#">HelpFix</a>
+            <a href="#">Dedication</a>
+        </div>
+        <div class="burger-menu" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header><span>Event Radar</span></header>
+
+    <!-- Content -->
+    <div class="container">
+        <!-- Event 1: Collabfest Hackathon -->
+        <div class="event-card">
+            <div class="event-title">Collabfest Hackathon 2024</div>
+            <div class="event-description">
+                Join the most awaited *Collabfest Hackathon 2024*, where innovators, coders, and dreamers come together to solve real-world challenges. Showcase your skills, connect with experts, and win exciting prizes!
+            </div>
+            <a class="event-link" href="https://www.collabfest.com/register" target="_blank">Register Now</a>
+        </div>
+
+        <!-- Placeholder for future entries -->
+        <!-- Copy this block to add more events -->
+        <div class="event-card">
+            <div class="event-title">Event Name</div>
+            <div class="event-description">Brief details about the event go here.</div>
+            <a class="event-link" href="Event Link Here" target="_blank">Register Now</a>
+        </div>
+    </div>
+
+    <footer>2024 Event Radar. All rights reserved</footer>
+
+    <script>
+        // Burger menu toggle function
+        function toggleMenu() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('active');
+        }
+    </script>
 </body>
+
 </html>
