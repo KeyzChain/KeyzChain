@@ -1,24 +1,29 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HelpFix</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | The Chain</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: Arial, sans-serif;
-            color: #333;
-            background-color: #f4f4f9;
-        }
-            /* Navbar Styles */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1, h2, h3 {
+      margin-bottom: 10px;
+    }
+
+    /* Navbar Styles */
     .navbar {
       background-color: #000;
       color: white;
@@ -87,146 +92,113 @@
       }
     }
 
-        
+    /* Header Section */
+    .header-section {
+      background: linear-gradient(120deg, #ffa500, #ff6347);
+      color: #fff;
+      text-align: center;
+      padding: 50px 20px;
+    }
 
-        /* Header Styling */
-        header {
-            background: linear-gradient(to right, #ffa500, #ff6347);
-            color: white;
-            padding: 20px 10%;
-            text-align: center;
-        }
+    .header-section h1 {
+      font-size: 2.5rem;
+    }
 
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
+    .header-section p {
+      font-size: 1.2rem;
+    }
 
-        header p {
-            font-size: 1rem;
-        }
+    /* Mission Section */
+    .mission-section {
+      background: #f4f4f9;
+      text-align: center;
+      padding: 40px 20px;
+    }
 
-        /* Section Styling */
-        section {
-            padding: 40px 10%;
-        }
+    .mission-section h2 {
+      color: #007BFF;
+    }
 
-        .about {
-            text-align: center;
-            margin-bottom: 50px;
-        }
+    /* Team Section */
+    .team-section {
+      background: linear-gradient(120deg, #ffa500, #ff6347);
+      padding: 40px 20px;
+      text-align: center;
+    }
 
-        .about h2 {
-            font-size: 2rem;
-            color: #0066cc;
-        }
+    .team-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
 
-        .about p {
-            margin-top: 10px;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
+    .team-card {
+      background: #f4f4f9;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 200px;
+      text-align: center;
+      padding: 20px;
+    }
 
-        /* Video Section */
-        .videos {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
+    .team-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
 
-        .video-card {
-            background: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            width: 300px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
+    /* Founder Section */
+    .founder-section {
+      background: linear-gradient(120deg, #ffa500, #ff6347);
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+    }
 
-        .video-card iframe {
-            width: 100%;
-            height: 200px;
-            border: none;
-        }
+    /* CTA Section */
+    .cta-section {
+      background: #007BFF;
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+    }
 
-        .video-card h3 {
-            padding: 10px;
-            background: #f18533;
-            color: white;
-            text-align: center;
-            font-size: 1.2rem;
-        }
+    .cta-section .cta-button {
+      display: inline-block;
+      background: #fff;
+      color: #007BFF;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-        /* Contact Section */
-        .contact {
-            text-align: center;
-            padding: 20px;
-            background: linear-gradient(to right, #ffa500, #ff6347);
-            border-top: 2px solid #0066cc;
-        }
+    .cta-section .cta-button:hover {
+      background: #f4f4f9;
+      color: #007BFF;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
 
-        .contact h2 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            color: #0066cc;
-        }
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .header-section h1 {
+        font-size: 1.8rem;
+      }
 
-        .contact p {
-            font-size: 1rem;
-            color: #fffefe;
-        }
+      .mission-section p, .founder-section p, .cta-section p {
+        font-size: 1rem;
+      }
 
-        .contact a {
-            color: #0066cc;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .contact a:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer Styles */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #0066cc;
-            color: white;
-            font-size: 0.9rem;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        /* Ensure the page fills the viewport */
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-        }
-
-        main {
-            flex: 1;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .videos {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .video-card {
-                width: 100%;
-                max-width: 500px;
-            }
-        }
-    </style>
+      .team-card {
+        width: 90%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navbar -->
+  <!-- Navbar -->
   <div class="navbar">
     <div class="logo">KeyzChain</div>
     <div class="menu">
@@ -242,56 +214,112 @@
       <div></div>
     </div>
   </div>
-    
 
-    <header>
-        <h1>Welcome to HelpFix</h1>
-        <p>Your ultimate guide to navigate and solve team-building challenges, events, and announcements.</p>
-    </header>
+  <!-- Header Section -->
+  <header class="header-section">
+    <div class="header-content">
+      <h1>About The Chain</h1>
+      <p>
+        "A place for students, by students, and of students." A professional platform for collaboration, opportunity, and growth.
+      </p>
+    </div>
+  </header>
 
-    <section class="about">
-        <h2>About HelpFix</h2>
-        <p>HelpFix is a one-stop platform designed to provide tips for winning, guidance on building effective teams, resolving event-related confusions, sharing learning resources, and announcing important updates.</p>
-    </section>
+  <!-- Mission Section -->
+  <section class="mission-section">
+    <div class="content">
+      <h2>What & Why the Chain is ⛓</h2>
+      <p>
+        The Chain is a gateway to opportunities and collaboration for a bright future. Our mission is to provide an easy and professional platform for our "Keyz Ambassadors" looking for opportunities and effective, responsible teams. Find opportunities based on your skills and collaborate with like-minded individuals and personalities.
+      </p>
+    </div>
+  </section>
 
-    <section class="videos">
-        <div class="video-card">
-            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="How to Build a Team"></iframe>
-            <h3>How to Build a Team</h3>
+  <!-- Meet the Team Section -->
+  <section class="team-section">
+    <div class="content">
+      <h2>OUR POWERHOUSE CREW</h2>
+      <p>
+        Teamwork at Keyz Chain
+        At Keyz Chain, we believe in the power of working together 🤝. Our team is made up of creative and passionate people who come together to build a platform where students can connect, share ideas, and grow. 
+        
+        Dedication of Our Team Members
+        Our team members are the heart 🌸 of Keyz Chain. They are always ready to give their best, whether it’s improving the platform, organizing events, or helping students find new opportunities. 
+        
+      
+        We are so grateful for our amazing team 🙏🏻 . Your dedication and effort are what make Keyz Chain so special. We appreciate everything you do, and we look forward to celebrating your contributions as we continue to grow together!
+      </p>
+
+      <!-- Team Cards -->
+      <div class="team-cards">
+        <div class="team-card">
+          <img src="images/pranav.jpg" alt="Team Member" class="team-image">
+          <h3>Pranav Raj</h3>
+          <p>Founder</p>
         </div>
-        <div class="video-card">
-            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Winning Strategies"></iframe>
-            <h3>Winning Strategies</h3>
+        <div class="team-card">
+          <img src="images/abhishek.jpg" alt="Team Member" class="team-image">
+          <h3>Abhishek Rajpoot</h3>
+          <p>Technical Team</p>
         </div>
-        <div class="video-card">
-            <iframe src="https://www.youtube.com/embed/V-_O7nl0Ii0" title="Event Management Tips"></iframe>
-            <h3>Event Tips</h3>
+        <div class="team-card">
+          <img src="images/kalyani.jpg" alt="Team Member" class="team-image">
+          <h3>Kalyani Jha</h3>
+          <p>Technical Team</p>
         </div>
-        <div class="video-card">
-            <iframe src="https://www.youtube.com/embed/2Vv-BfVoq4g" title="Important Announcements"></iframe>
-            <h3>Important Announcements</h3>
+        <div class="team-card">
+          <img src="images/aparna.jpg" alt="Team Member" class="team-image">
+          <h3>Aparna Pandey</h3>
+          <p>Content Writer</p>
         </div>
-    </section>
+        <div class="team-card">
+          <img src="images/anand.jpg" alt="Team Member" class="team-image">
+          <h3>Anand Kumar</h3>
+          <p>Research & Dev.</p>
+        </div>
+        <div class="team-card">
+          <img src="images/vihaan.jpg" alt="Team Member" class="team-image">
+          <h3>Vihaan Agarwal</h3>
+          <p>Research & Dev.</p>
+        </div>
+        <div class="team-card">
+            <img src="images/vihaan.jpg" alt="Team Member" class="team-image">
+            <h3>Vihaan Agarwal</h3>
+            <p>Research & Dev.</p>
+          </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="contact">
-        <h2>Contact Us</h2>
-        <p>Have questions or need support? Reach out to us via email:</p>
-        <p>
-            <a href="mailto:thekeyz.enquiry@gmail.com?subject=Support%20Request&body=Hello%2C%20I%20need%20help%20with...">
-                thekeyz.enquiry@gmail.com
-            </a>
-        </p>
-        <p>Or copy this email: <strong>thekeyz.enquiry@gmail.com</strong></p>
-    </section>
+  <!-- Founder Section -->
+  <section class="founder-section">
+    <div class="content">
+      <h1>The Mind Behind the Magic ✨🔮</h1>
+      <h2>Meet Pranav Raj Choudhary</h2>
+      <p>
+        Originally from Bihar and currently studying in Bhopal, Pranav faced numerous challenges in connecting with the right people. After a tough hackathon experience, he created The Chain to empower students and provide opportunities for growth.
+      </p>
+      <p>
+        With mentorship from Ravindra Tanwar and a vision for ambitious projects like Keyz Productions and Keyz Coding, Pranav turned his vision into reality, inspiring students across domains.
+      </p>
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2024 HelpFix. All rights reserved.</p>
-    </footer>
+  <!-- Call-to-Action Section -->
+  <section class="cta-section">
+    <div class="content">
+      <h2>Join The Chain Today!</h2>
+      <p>
+        Be part of a platform that connects, inspires, and empowers students. Whether you're looking for opportunities or seeking to collaborate, The Chain is your gateway to success. All rights are reserved @TheKeyz Group.
+      </p>
+      <a href="index.html" class="cta-button">Get Started</a>
+    </div>
+  </section>
 
-    <script>
-        function toggleMenu() {
-          document.querySelector('.navbar').classList.toggle('active');
-        }
-      </script>
+  <script>
+    function toggleMenu() {
+      document.querySelector('.navbar').classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
