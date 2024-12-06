@@ -10,7 +10,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(120deg, #ffa500, #fa6146);
+            background-color:#fef9e4; l
             min-height: 100vh;
         }
 
@@ -45,8 +45,8 @@
 
         .navbar .menu a:hover {
             text-decoration: none;
-            color: yellow;
-            text-shadow: 0 0 10px yellow;
+            color: #d1ad64;
+            text-shadow: 0 0 10px #d1ad6b;
         }
 
         .burger-menu {
@@ -197,7 +197,7 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: #fa6146;
+            background-color: #d1ad6b;
             color: white;
             border: none;
             border-radius: 50%;
@@ -241,13 +241,17 @@
                 width: 100%;
             }
         }
+        .logo a{
+            color: white;
+            text-decoration: none;
+        }
     </style>
 </head>
 
 <body>
     <!-- Navbar -->
     <div class="navbar">
-        <div class="logo">KeyzChain</div>
+        <div class="logo"><a href="index.html">KeyzChain</a></div>
         <div class="menu">
             <a href="index.html">Home</a>
             <a href="ambassadors.html">Our Ambassadors</a>
@@ -264,7 +268,7 @@
 
     <!-- Content -->
     <div class="container">
-        <h1 style="color:#000; ">Our Ambassadors</h1>
+        <h1 >Our Ambassadors</h1>
         <div class="search-container">
             <input type="text" id="searchBar" placeholder="Search by name or skill..." oninput="filterCards()">
         </div>
@@ -274,7 +278,8 @@
         </div>
         <p id="noResult">No results found.</p>
     </div>
-    <button id="backToTopBtn" onclick="goToPage()">Back/Home</button>
+    
+    <button onclick="window.location.href='mailto:thekeyz.enquiry@gmail.com?subject=Report!&body=I%20am%20reporting%20the%20issue%20'"id="backToTopBtn">Report Issue</button>
 
     <script>
         // Fetch data from the Google Apps Script Web App
