@@ -116,16 +116,6 @@
             text-decoration: underline;
         }
 
-        /* Sparkle animation */
-        .sparkle {
-            position: absolute;
-            background-color: rgba(94, 149, 226, 0.9);
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            pointer-events: none;
-            animation: sparkleAnimation 1s forwards;
-        }
 
         @keyframes sparkleAnimation {
             0% {
@@ -250,19 +240,7 @@
             }, 3000); 
         });
 
-        // Sparkles effect trigger
-        document.querySelectorAll('input').forEach(input => {
-            input.addEventListener('input', function() {
-                if (this.value) {
-                    let sparkle = document.createElement('div');
-                    sparkle.classList.add('sparkle');
-                    sparkle.style.left = `${this.getBoundingClientRect().left + this.offsetWidth / 2 - 10}px`;
-                    sparkle.style.top = `${this.getBoundingClientRect().top + window.scrollY - 10}px`;
-                    document.body.appendChild(sparkle);
-                    setTimeout(() => sparkle.remove(), 1500);
-                }
-            });
-        });
+        
     </script>
 </body>
 
