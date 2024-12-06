@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,12 +17,12 @@
     body {
       font-family: Arial, sans-serif;
       color: #333;
-      background-color: #f4f4f9;
+      background-color: #fef9e4; /* Soft cream background */
     }
 
     /* Navbar Styles */
     .navbar {
-      background-color: #000;
+      background-color: #000000f2; /* Light cream navbar background */
       color: white;
       padding: 15px;
       display: flex;
@@ -51,10 +50,8 @@
     }
 
     .navbar .menu a:hover {
-      color: yellow;
-      /* Glowing effect color */
-      text-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow, 0 0 40px yellow, 0 0 50px yellow;
-      /* Glowing effect */
+      color: #d1ad6b; /* Soft yellow on hover */
+      text-shadow: 0 0 10px #d1ad6b, 0 0 20px #d1ad6b, 0 0 30px #d1ad6b, 0 0 40px #d1ad6b, 0 0 50px #d1ad6b; /* Glowing effect */
     }
 
     .burger-menu {
@@ -78,7 +75,7 @@
         position: absolute;
         top: 60px;
         right: 0;
-        background-color: #000;
+        background-color: #000000f2;
         padding: 20px;
         width: 200px;
       }
@@ -92,12 +89,10 @@
       }
     }
 
-
-
     /* Header Styling */
     header {
-      background: linear-gradient(to right, #ffa500, #ff6347);
-      color: white;
+      background: linear-gradient(to right, #d1ad6b, #fef9e4); /* Soft yellow and cream gradient */
+      color: #333;
       padding: 20px 10%;
       text-align: center;
     }
@@ -114,6 +109,7 @@
     /* Section Styling */
     section {
       padding: 40px 10%;
+      color: #333; /* Text color */
     }
 
     .about {
@@ -123,7 +119,7 @@
 
     .about h2 {
       font-size: 2rem;
-      color: #0066cc;
+      color: #0066cc; /* Soft blue for headings */
     }
 
     .about p {
@@ -141,7 +137,7 @@
     }
 
     .video-card {
-      background: #f9f9f9;
+      background: #fef9e4; /* Soft cream background */
       border: 1px solid #ddd;
       border-radius: 8px;
       width: 300px;
@@ -157,7 +153,7 @@
 
     .video-card h3 {
       padding: 10px;
-      background: #f18533;
+      background: #d1ad6b; /* Soft yellow background for video card title */
       color: white;
       text-align: center;
       font-size: 1.2rem;
@@ -167,14 +163,14 @@
     .contact {
       text-align: center;
       padding: 20px;
-      background: linear-gradient(to right, #ffa500, #ff6347);
-      border-top: 2px solid #0066cc;
+      background: linear-gradient(to right, #d1ad6b, #fef9e4); /* Soft yellow and cream gradient */
+     
     }
 
     .contact h2 {
       font-size: 1.8rem;
       margin-bottom: 10px;
-      color: #0066cc;
+      color: #000000; /* Soft blue for headings */
     }
 
     .contact p {
@@ -183,8 +179,8 @@
     }
 
     .contact a {
-      color: #0066cc;
-      font-weight: bold;
+      color: blue;
+      
       text-decoration: none;
     }
 
@@ -196,8 +192,8 @@
     footer {
       text-align: center;
       padding: 20px;
-      background: #0066cc;
-      color: white;
+      background: #ffffff; /* Soft blue footer */
+      color: rgb(0, 0, 0);
       font-size: 0.9rem;
       position: relative;
       bottom: 0;
@@ -228,13 +224,18 @@
         max-width: 500px;
       }
     }
+
+    .logo a {
+      color: white;
+      text-decoration: none;
+    }
   </style>
 </head>
 
 <body>
   <!-- Navbar -->
   <div class="navbar">
-    <div class="logo">KeyzChain</div>
+    <div class="logo"><a href="index.html">KeyzChain</a></div>
     <div class="menu">
       <a href="index.html">Home</a>
       <a href="ambassadors.html">Our Ambassadors</a>
@@ -248,7 +249,6 @@
       <div></div>
     </div>
   </div>
-
 
   <header>
     <h1>Welcome to HelpFix</h1>
