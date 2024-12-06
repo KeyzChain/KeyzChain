@@ -3,14 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | The Keyz Chain</title>
+    <title>The Keyz Chain</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #fef9e4;  /* Soft creme background */
+        }
+
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
+            background-color: #fef9e4;
+            color: #5d5d5d;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
         }
 
         /* Navbar styles */
@@ -21,9 +32,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #000;
+            background-color: #000000f2;  /* Light creme background */
             padding: 10px 20px;
-            color: white;
+            color: #ffffff;
         }
 
         .navbar .logo {
@@ -45,14 +56,14 @@
 
         .navbar ul li a {
             text-decoration: none;
-            color: white;
+            color: #ffffff;
             font-size: 16px;
             font-weight: 400;
             transition: color 0.3s ease;
         }
 
         .navbar ul li a:hover {
-            color: #ffa500;
+            color: #d1ad6b;  /* Soft yellow on hover */
         }
 
         .burger-menu {
@@ -65,7 +76,7 @@
         }
 
         .burger-menu div {
-            background-color: white;
+            background-color: #ffffff;
             height: 4px;
             margin: 4px 0;
             width: 35px;
@@ -76,8 +87,8 @@
         .about {
             text-align: center;
             padding: 50px 20px;
-            background: linear-gradient(120deg, #ffa500, #ff6347);
-            color: white;
+            background-color: #ffffffa3;  /* Soft creme background */
+            color: #ffffff;
         }
 
         .about .logo-img {
@@ -91,7 +102,7 @@
             font-family: 'Roboto', sans-serif;
             font-size: 36px;
             margin-bottom: 20px;
-            color: #ffffff;
+            color: #5d5d5d;
         }
 
         .about p {
@@ -99,7 +110,7 @@
             font-size: 18px;
             margin-bottom: 20px;
             line-height: 1.6;
-            color: #ffffff;
+            color: #000000;  /* Lighter grey for softer text */
         }
 
         .btn-container {
@@ -109,7 +120,7 @@
         }
 
         .join-btn, .team-btn {
-            background-color: #333;
+            background-color: #5d5d5d;
             color: white;
             padding: 15px 30px;
             font-family: 'Poppins', sans-serif;
@@ -121,7 +132,11 @@
         }
 
         .join-btn:hover, .team-btn:hover {
-            background-color: #ffa500;
+            background-color: #d1ad6b;  /* Soft yellow on hover */
+        }
+        .logo a{
+            text-decoration: none;
+            color: white;
         }
 
         /* Responsive styles */
@@ -129,7 +144,7 @@
             .navbar ul {
                 display: none;
                 flex-direction: column;
-                background-color: #333;
+                background-color: #000000;  /* Soft creme background */
                 position: absolute;
                 top: 50px;
                 right: 20px;
@@ -188,7 +203,7 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="logo">Keyz Chain</div>
+        <div class="logo"><a href="index.html">Keyz Chain</a></div>
         <ul id="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="ambassadors.html">Our Ambassadors</a></li>
@@ -206,8 +221,8 @@
     <!-- About Section -->
     <section class="about" id="home">
         <img src="https://lh3.googleusercontent.com/a/ACg8ocJeQ7G4BKaJsF5mZex5Mn0vRXjSOEVPEb0I15PYIX5HDxU1-Jo=s360-c-no" alt="Logo" class="logo-img">
-        <h1>
-            Who and Why we are? <br>⛓</h1>
+        <h1>THE CHAIN CHAT<br>
+            What & Why the Chain is ⛓</h1>
         <p>
             The Chain: "A place for students, by students, and of students" 👩🏻‍🎓. A gateway to opportunities and collaboration for a bright future 🔅. Our mission is to provide an easy and professional platform for our "Keyz Ambassadors" who are looking for opportunities and seeking effective, responsible teams 🌸. Find opportunities based on your skills and collaborate with like-minded individuals and personalities.<br>
 
@@ -220,16 +235,13 @@
             HELP FIX: A dedicated space featuring video clips for learning and resolving user doubts with ease.
         </p>
         <div class="btn-container">
-          <button class="join-btn" onclick="window.location.href='register.html'">Join the Chain</button>
-          <button class="team-btn" onclick="window.location.href='ambassadors.html'">Make Your Team Now!</button>
-          <button class="join-btn" onclick="window.location.href='register.html'">Update Your Card</button>
-      </div>
-      
+            <button class="join-btn" onclick="window.location.href='register.html'">Join the Chain</button>
+            <button class="team-btn" onclick="window.location.href='ambassadors.html'">Make Your Team Now!</button>
+            <button class="join-btn" onclick="window.location.href='register.html'">Update your Card</button>
+        </div>
     </section>
-    
 
     <script>
-        
         function toggleMenu() {
             const navLinks = document.getElementById('nav-links');
             navLinks.classList.toggle('active');
