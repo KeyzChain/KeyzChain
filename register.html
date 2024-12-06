@@ -8,8 +8,8 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #ff7e5f, #feb47b);
-            color: #fff;
+            background: linear-gradient(135deg, #fef9e4, #fef9e4); /* Soft creme background */
+            color: #333;
             text-align: center;
             min-height: 100vh;
             margin: 0;
@@ -21,7 +21,7 @@
 
         h1 {
             font-size: 3rem;
-            color: #ffffff;
+            color: #333;
             margin-bottom: 40px;
             text-transform: uppercase;
             letter-spacing: 5px;
@@ -80,7 +80,7 @@
         }
 
         input:focus {
-            border-color: #ff7e5f;
+            border-color: #d1ad6b; /* Soft yellow */
             background-color: #fff5f3;
         }
 
@@ -89,7 +89,7 @@
         }
 
         button {
-            background-color: #ff7e5f;
+            background-color: #d1ad6b; /* Soft yellow */
             color: white;
             font-weight: bold;
             cursor: pointer;
@@ -97,30 +97,49 @@
         }
 
         button:hover {
-            background-color: #873a00;
+            background-color: #b78c4b; /* Darker yellow on hover */
             transform: scale(1.05);
         }
 
         p {
             font-size: 0.9rem;
-            color: #000000;
+            color: #333;
         }
 
         a {
-
             text-decoration: none;
-
+            color: #0066cc; /* Soft blue */
             transition: color 0.3s ease;
         }
 
         a:hover {
-
             text-decoration: underline;
         }
 
-        /* Animation container */
-        .animation-container {
+        /* Sparkle animation */
+        .sparkle {
+            position: absolute;
+            background-color: rgba(94, 149, 226, 0.9);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sparkleAnimation 1s forwards;
+        }
 
+        @keyframes sparkleAnimation {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-40px) scale(2);
+            }
+        }
+
+        .animation-container {
             display: none;
             margin-top: 50px;
         }
@@ -152,14 +171,13 @@
 
         .text-message.visible {
             opacity: 1;
-
         }
     </style>
 </head>
 
 <body>
     <div>
-        <h2>Fill The Form Below:</h2>
+        
         <form id="submit-to-google-sheet">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" placeholder="Enter your name" required>
@@ -177,12 +195,10 @@
             <input type="text" id="semester" name="semester" placeholder="Enter your semester" required>
 
             <label for="technical_skills">Technical Skills</label>
-            <input type="text" id="technical_skills" name="technical_skills" placeholder="Use comma to separate skills"
-                required>
+            <input type="text" id="technical_skills" name="technical_skills" placeholder="Use comma to separate skills" required>
 
             <label for="non_technical_skills">Non-Technical Skills</label>
-            <input type="text" id="non_technical_skills" name="non_technical_skills"
-                placeholder="Use comma to separate skills" required>
+            <input type="text" id="non_technical_skills" name="non_technical_skills" placeholder="Use comma to separate skills" required>
 
             <label for="awards">Awards/Rewards</label>
             <input type="text" id="awards" name="awards" placeholder="Describe awards/rewards" required>
@@ -193,16 +209,13 @@
             <label for="phone">Phone</label>
             <input type="tel" id="phone" name="phone" placeholder="Enter Phone Number(Visible to everyone!)">
 
-            <p>By joining the chain, you must agree to the <a
-                    href="https://docs.google.com/document/u/0/d/1wKRVJqVPk_hYMMIsztyEtEeg3p4gTzVQ0P2UuB3iJnk/mobilebasic"
-                    target="_blank">terms and conditions</a>.</p>
+            <p>By joining the chain, you must agree to the <a href="https://docs.google.com/document/u/0/d/1wKRVJqVPk_hYMMIsztyEtEeg3p4gTzVQ0P2UuB3iJnk/mobilebasic" target="_blank">terms and conditions</a>.</p>
             <button type="submit">JOIN THE CHAIN</button>
         </form>
 
         <!-- Animation Section -->
         <div class="animation-container" id="animationContainer">
-            <img src="https://previews.dropbox.com/p/thumb/ACfy6nZFetH1tfWgKxBtcWYYqe_CFhobb-QATuFBjEst82BhFJn_joFl0rHXbzUPKZcIdkS8stj3nm6aePbjrmusNMR1ks6W4_NNEAHmm66GzJVQlu1fkrw9prTwS559h5kHrOaK9eehpLuqhH3dSrBUFR9NM_n0-9tjR5O6c9Xy6MuVq7mG0ChyMczayHnTGoBI3uO35PWVjJxS3YwB7JQ6XW3izVqQNqEjj1crCIiefgpnFgKuq0TvBj1sblmjEfqqScDyafVaumuK8GCPPnjLkw8vWoOH6sRFRhK7FNqGxq8sdZsyeCiGtwPJIU35kboMCaBniRcXczuhE-6NXAqL/p.png?is_prewarmed=true"
-                alt="Icon panvel Gaya" class="rotating-image pulse" id="rotatingImage" />
+            <img src="https://previews.dropbox.com/p/thumb/ACfy6nZFetH1tfWgKxBtcWYYqe_CFhobb-QATuFBjEst82BhFJn_joFl0rHXbzUPKZcIdkS8stj3nm6aePbjrmusNMR1ks6W4_NNEAHmm66GzJVQlu1fkrw9prTwS559h5kHrOaK9eehpLuqhH3dSrBUFR9NM_n0-9tjR5O6c9Xy6MuVq7mG0ChyMczayHnTGoBI3uO35PWVjJxS3YwB7JQ6XW3izVqQNqEjj1crCIiefgpnFgKuq0TvBj1sblmjEfqqScDyafVaumuK8GCPPnjLkw8vWoOH6sRFRhK7FNqGxq8sdZsyeCiGtwPJIU35kboMCaBniRcXczuhE-6NXAqL/p.png?is_prewarmed=true" alt="Icon panvel Gaya" class="rotating-image pulse" id="rotatingImage" />
             <div class="text-message" id="textMessage">Joining Chain...</div>
         </div>
     </div>
@@ -225,23 +238,31 @@
             forme.style.display = "none";
             animationContainer.style.display = "block";
 
-            // Show "Joining Chain..." text
             textMessage.classList.add("visible");
             textMessage.textContent = "Joining Chain...";
 
-            // Change text to "Welcome to the Chain!" after 3 seconds
             setTimeout(() => {
-                textMessage.textContent = "Congratulations!!! ,Welcome to the Chain || Ready to land on the hime page! ";
+                textMessage.textContent = "Congratulations!!! ,Welcome to the Chain || Ready to land on the home page! ";
 
-                // Redirect to index.html after 3 more seconds (total of 6 seconds after form submission)
                 setTimeout(() => {
                     window.location.href = "index.html";
-                }, 3000);  // This adds a 3-second delay before the redirection
-            }, 3000); // The text change happens after 3 seconds
+                }, 3000);  
+            }, 3000); 
         });
 
-
-
+        // Sparkles effect trigger
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('input', function() {
+                if (this.value) {
+                    let sparkle = document.createElement('div');
+                    sparkle.classList.add('sparkle');
+                    sparkle.style.left = `${this.getBoundingClientRect().left + this.offsetWidth / 2 - 10}px`;
+                    sparkle.style.top = `${this.getBoundingClientRect().top + window.scrollY - 10}px`;
+                    document.body.appendChild(sparkle);
+                    setTimeout(() => sparkle.remove(), 1500);
+                }
+            });
+        });
     </script>
 </body>
 
