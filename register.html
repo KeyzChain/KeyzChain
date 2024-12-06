@@ -2,184 +2,225 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CHAIN JOINING</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(120deg, #ffa500, #ff6347);
-      color: #fff;
-      text-align: center;
-      min-height: 100vh;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHAIN JOINING</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            color: #fff;
+            text-align: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-      margin: 0;
-      padding: 0;
-    }
+        h1 {
+            font-size: 3rem;
+            color: #ffffff;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            animation: fadeIn 2s ease-out;
+        }
 
-    h1 {
-      margin-top: 20px;
-      font-size: 2.5rem;
-      color: #fffffffc;
-    }
+        form {
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 30px;
+            width: 90%;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            animation: fadeIn 2s ease-out forwards;
+        }
 
-    form {
-      background-color: #ffffffec;
-      border-radius: 20px;
-      padding: 20px;
-      width: 90%;
-      max-width: 400px;
-      margin: 20px auto;
-      box-shadow: 0 4px 8px rgba(197, 94, 94, 0.3);
-    }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
 
-    label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    input,
-    button {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: none;
-      border-radius: 10px;
-      font-size: 1rem;
-    }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-align: left;
+            color: #333;
+        }
 
-    input {
-      background-color: #dfe6fd;
-      color: #333;
-      border: 3px solid transparent;
-      /* Default border */
-      border-radius: 10px;
+        input,
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
 
-      transition: border-color 0.3s ease;
-      outline: none;
+        input {
+            background-color: #f2f2f2;
+            color: #333;
+            border: 2px solid #ddd;
+            outline: none;
+        }
 
+        input:focus {
+            border-color: #ff7e5f;
+            background-color: #fff5f3;
+        }
 
-    }
+        input::placeholder {
+            color: #888;
+        }
 
-    input:hover {
-      border-color: #30ece3;
-      /* Border color on hover */
-    }
+        button {
+            background-color: #ff7e5f;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
 
+        button:hover {
+            background-color: #873a00;
+            transform: scale(1.05);
+        }
 
+        p {
+            font-size: 0.9rem;
+            color: #000000;
+        }
 
-    input::placeholder {
-      color: #888;
-    }
+        a {
 
-    button {
-      background-color: #ff4f81;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-    }
+            text-decoration: none;
 
-    button:hover {
-      background-color: #f70445;
-    }
+            transition: color 0.3s ease;
+        }
 
-    p {
-      font-size: 0.8rem;
-      color: #000000;
-    }
+        a:hover {
 
-    a {
-      color: #0e1eff;
-      text-decoration: none;
-    }
+            text-decoration: underline;
+        }
 
-    a:hover {
-      text-decoration: underline;
-    }
+        /* Animation container */
+        .animation-container {
 
-    /* Animation container */
-    .animation-container {
+            display: none;
+            margin-top: 50px;
+        }
 
-      display: none;
-      margin-top: 50px;
-    }
+        .rotating-image {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            animation: rotate 5s linear infinite;
+        }
 
-    .rotating-image {
-      width: 200px;
-      height: 200px;
-      margin: 0 auto;
-      animation: rotate 5s linear infinite;
-    }
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
 
-    @keyframes rotate {
-      from {
-        transform: rotate(0deg);
-      }
+            to {
+                transform: rotate(360deg);
+            }
+        }
 
-      to {
-        transform: rotate(360deg);
-      }
-    }
+        .text-message {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
 
-    .text-message {
-      margin-top: 20px;
-      font-size: 1.5rem;
-      font-weight: bold;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
+        .text-message.visible {
+            opacity: 1;
 
-    .text-message.visible {
-      opacity: 1;
-    }
-  </style>
+        }
+    </style>
 </head>
 
 <body>
-  <form id="submit-to-google-sheet">
-    <input type="text" name="name" placeholder="Name" required>
-    <input type="text" name="image" placeholder="Image (URL) else enter N/A " required>
-    <input type="text" name="enroll" placeholder="Enroll number" required>
-    <input type="text" name="class" placeholder="Class" required>
-    <input type="text" name="semester" placeholder="Semester" required>
-    <input type="text" name="technical_skills" placeholder="Technical skills (use comma)" required>
-    <input type="text" name="non_technical_skills" placeholder="Non-technical skills (use comma)" required>
-    <input type="text" name="awards" placeholder="Awards/Rewards (use comma and describe)" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="tel" name="phone" placeholder="Phone ">
-    <p>By joining the chain, you must agree to the <a
-        href="https://docs.google.com/document/u/0/d/1wKRVJqVPk_hYMMIsztyEtEeg3p4gTzVQ0P2UuB3iJnk/mobilebasic">terms
-        and conditions</a>.</p>
-    <button type="submit">JOIN THE CHAIN</button>
-  </form>
-  <!-- Animation Section -->
-  <div class="animation-container" id="animationContainer">
-    <img src="https://previews.dropbox.com/p/thumb/ACfy6nZFetH1tfWgKxBtcWYYqe_CFhobb-QATuFBjEst82BhFJn_joFl0rHXbzUPKZcIdkS8stj3nm6aePbjrmusNMR1ks6W4_NNEAHmm66GzJVQlu1fkrw9prTwS559h5kHrOaK9eehpLuqhH3dSrBUFR9NM_n0-9tjR5O6c9Xy6MuVq7mG0ChyMczayHnTGoBI3uO35PWVjJxS3YwB7JQ6XW3izVqQNqEjj1crCIiefgpnFgKuq0TvBj1sblmjEfqqScDyafVaumuK8GCPPnjLkw8vWoOH6sRFRhK7FNqGxq8sdZsyeCiGtwPJIU35kboMCaBniRcXczuhE-6NXAqL/p.png?is_prewarmed=true"
-            alt="Icon panvel Gaya" class="rotating-image" id="rotatingImage" />
+    <div>
+        <h2>Fill The Form Below:</h2>
+        <form id="submit-to-google-sheet">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
+            <label for="image">Image URL</label>
+            <input type="text" id="image" name="image" placeholder="Image (URL) else enter N/A" required>
 
-    <div class="text-message" id="textMessage">Joining Chain...</div>
-  </div>
+            <label for="enroll">Enroll Number</label>
+            <input type="text" id="enroll" name="enroll" placeholder="Enter your enroll number" required>
 
+            <label for="class">Class</label>
+            <input type="text" id="class" name="class" placeholder="Enter your class" required>
 
-  <script>
-    const forme = document.getElementById('submit-to-google-sheet');
+            <label for="semester">Semester</label>
+            <input type="text" id="semester" name="semester" placeholder="Enter your semester" required>
+
+            <label for="technical_skills">Technical Skills</label>
+            <input type="text" id="technical_skills" name="technical_skills" placeholder="Use comma to separate skills"
+                required>
+
+            <label for="non_technical_skills">Non-Technical Skills</label>
+            <input type="text" id="non_technical_skills" name="non_technical_skills"
+                placeholder="Use comma to separate skills" required>
+
+            <label for="awards">Awards/Rewards</label>
+            <input type="text" id="awards" name="awards" placeholder="Describe awards/rewards" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter Phone Number(Visible to everyone!)">
+
+            <p>By joining the chain, you must agree to the <a
+                    href="https://docs.google.com/document/u/0/d/1wKRVJqVPk_hYMMIsztyEtEeg3p4gTzVQ0P2UuB3iJnk/mobilebasic"
+                    target="_blank">terms and conditions</a>.</p>
+            <button type="submit">JOIN THE CHAIN</button>
+        </form>
+
+        <!-- Animation Section -->
+        <div class="animation-container" id="animationContainer">
+            <img src="https://previews.dropbox.com/p/thumb/ACfy6nZFetH1tfWgKxBtcWYYqe_CFhobb-QATuFBjEst82BhFJn_joFl0rHXbzUPKZcIdkS8stj3nm6aePbjrmusNMR1ks6W4_NNEAHmm66GzJVQlu1fkrw9prTwS559h5kHrOaK9eehpLuqhH3dSrBUFR9NM_n0-9tjR5O6c9Xy6MuVq7mG0ChyMczayHnTGoBI3uO35PWVjJxS3YwB7JQ6XW3izVqQNqEjj1crCIiefgpnFgKuq0TvBj1sblmjEfqqScDyafVaumuK8GCPPnjLkw8vWoOH6sRFRhK7FNqGxq8sdZsyeCiGtwPJIU35kboMCaBniRcXczuhE-6NXAqL/p.png?is_prewarmed=true"
+                alt="Icon panvel Gaya" class="rotating-image pulse" id="rotatingImage" />
+            <div class="text-message" id="textMessage">Joining Chain...</div>
+        </div>
+    </div>
+
+    <script>
+        const forme = document.getElementById('submit-to-google-sheet');
         const animationContainer = document.getElementById("animationContainer");
         const textMessage = document.getElementById("textMessage");
 
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbx4vM3Z2cgYgUG6sHgghqswREL8eWVnsE0ZPKagxLQ63HySbXugEqm4f6-hHg0IUUNK0A/exec'
-        const form = document.forms['submit-to-google-sheet']
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbx4vM3Z2cgYgUG6sHgghqswREL8eWVnsE0ZPKagxLQ63HySbXugEqm4f6-hHg0IUUNK0A/exec';
+        const form = document.forms['submit-to-google-sheet'];
 
         form.addEventListener('submit', e => {
-            e.preventDefault()
-
-
+            e.preventDefault();
 
             fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                 .then(response => console.log('Success!', response))
-                .catch(error => console.error('Error!', error.message))
-
+                .catch(error => console.error('Error!', error.message));
 
             forme.style.display = "none";
             animationContainer.style.display = "block";
@@ -190,11 +231,18 @@
 
             // Change text to "Welcome to the Chain!" after 3 seconds
             setTimeout(() => {
-                textMessage.textContent = "Welcome to the Chain!,You can leave the page!";
-            }, 3000);
-        })
-  </script>
-  </script>
+                textMessage.textContent = "Congratulations!!! ,Welcome to the Chain || Ready to land on the hime page! ";
+
+                // Redirect to index.html after 3 more seconds (total of 6 seconds after form submission)
+                setTimeout(() => {
+                    window.location.href = "index.html";
+                }, 3000);  // This adds a 3-second delay before the redirection
+            }, 3000); // The text change happens after 3 seconds
+        });
+
+
+
+    </script>
 </body>
 
 </html>
