@@ -8,15 +8,15 @@
     <style>
         body {
             margin: 0;
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(120deg, #ffa500, #ff6347);
-            color: white;
+            font-family: 'Poppins', sans-serif;
+            background-color: #fef9e4; /* Soft creme background */
+            color: #5d5d5d; /* Soft grey text color */
             box-sizing: border-box;
         }
 
         /* Navbar Styles */
         .navbar {
-            background-color: #000;
+            background-color: #000000f2; /* Light creme background */
             color: white;
             padding: 15px;
             display: flex;
@@ -30,6 +30,7 @@
         .navbar .logo {
             font-size: 24px;
             font-weight: bold;
+            color: #d1ad6b; /* Soft yellow logo */
         }
 
         .navbar .menu {
@@ -44,8 +45,8 @@
         }
 
         .navbar .menu a:hover {
-            color: yellow;
-            text-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow;
+            color: #d1ad6b; /* Soft yellow on hover */
+            text-shadow: 0 0 10px #d1ad6b, 0 0 20px #d1ad6b, 0 0 30px #d1ad6b;
         }
 
         .burger-menu {
@@ -59,6 +60,10 @@
             height: 3px;
             background-color: white;
         }
+        .logo a{
+            color: white;
+            text-decoration: none;
+        }
 
         /* Responsive Navbar */
         @media screen and (max-width: 768px) {
@@ -69,7 +74,7 @@
                 position: absolute;
                 top: 60px;
                 right: 0;
-                background-color: #000;
+                background-color: #000000f2;
                 padding: 20px;
                 width: 200px;
             }
@@ -91,11 +96,11 @@
             background-color: rgba(255, 255, 255, 0.1);
             text-transform: uppercase;
             letter-spacing: 3px;
-            border-bottom: 2px solid white;
+            border-bottom: 2px solid #d1ad6b; /* Soft yellow border */
         }
 
         header span {
-            color: #e8f7ff;
+            color: #393424;
         }
 
         .container {
@@ -121,7 +126,7 @@
         .event-title {
             font-size: 2em;
             font-weight: bold;
-            color: #ffffff;
+            color: #3a3020;
             margin-bottom: 15px;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
         }
@@ -130,7 +135,7 @@
             font-size: 1.2em;
             line-height: 1.6;
             margin-bottom: 20px;
-            color: #ffffff;
+            color: #000000;
         }
 
         .event-link {
@@ -156,7 +161,7 @@
             font-size: 1em;
             padding: 15px;
             background-color: rgba(255, 255, 255, 0.1);
-            border-top: 2px solid white;
+            border-top: 2px solid #d1ad6b; /* Soft yellow border */
         }
     </style>
 </head>
@@ -164,7 +169,7 @@
 <body>
     <!-- Navbar -->
     <div class="navbar">
-        <div class="logo">KeyzChain</div>
+        <div class="logo"><a href="index.html">KeyzChain</a></div>
         <div class="menu">
             <a href="index.html">Home</a>
             <a href="ambassadors.html">Our Ambassadors</a>
@@ -188,7 +193,10 @@
         <div class="event-card">
             <div class="event-title">Collabfest'24</div>
             <div class="event-description">
-                Join the most awaited Collabfest'24, A Day full of joy and thrilling experience will happen in JNCT bhopal,specially dedicated to "Our Ambassadors".Three Events are-> <b>1. who can code faster.</b> </b>   <b>2. Idea Machine Presentation. </b>  <b>3. Collab Logo</b> 
+                Join the most awaited Collabfest'24, A Day full of joy and thrilling experience will happen in JNCT bhopal, specially dedicated to "Our Ambassadors". Three Events are:
+                <b>1. Who can code faster.</b><br>
+                <b>2. Idea Machine Presentation.</b><br>
+                <b>3. Collab Logo</b>
             </div>
             <a class="event-link" href="https://www.collabfest.com/register" target="_blank">Registration starting soon</a>
         </div>
