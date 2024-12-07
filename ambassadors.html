@@ -10,8 +10,8 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color:#fef9e4; l
-            min-height: 100vh;
+            background-color: #fef9e4;
+            l min-height: 100vh;
         }
 
         /* Navbar Styles */
@@ -241,7 +241,8 @@
                 width: 100%;
             }
         }
-        .logo a{
+
+        .logo a {
             color: white;
             text-decoration: none;
         }
@@ -278,8 +279,10 @@
         </div>
         <p id="noResult">No results found.</p>
     </div>
-    
-    <button onclick="window.location.href='mailto:thekeyz.enquiry@gmail.com?subject=Report!&body=I%20am%20reporting%20the%20issue%20'"id="backToTopBtn">Report Issue</button>
+
+    <button
+        onclick="window.location.href='mailto:thekeyz.enquiry@gmail.com?subject=Report!&body=I%20am%20reporting%20the%20issue%20'"
+        id="backToTopBtn">Report Issue</button>
 
     <script>
         // Fetch data from the Google Apps Script Web App
@@ -337,12 +340,11 @@
                 back.classList.add("back");
 
                 back.innerHTML = `
-                    <h3>Awards</h3>
-                    <p>${row[7]}</p>
-                    <h3>Contact</h3>
-                    <p>Email: ${row[8]}</p>
-                    <p>Phone: ${row[9]}</p>
-                `;
+    <h3>Awards</h3>
+    <p>${row[7]}</p>
+    <h3>Contact</h3>
+    <p>Email: <a href="mailto:${row[8]}?subject=Asking%20for%20collaboration%20(KeyzChain)&body=Hi%20there,%0A%0AHow%20are%20you?">${row[8]}</a></p>
+`;
 
                 card.appendChild(front);
                 card.appendChild(back);
