@@ -252,13 +252,13 @@
 <body>
     <!-- Navbar -->
     <div class="navbar">
-        <div class="logo"><a href="index.html">KeyzChain</a></div>
+        <div class="logo"><a href='/'>KeyzChain</a></div>
         <div class="menu">
-            <a href="index.html">Home</a>
-            <a href="ambassadors.html">Our Ambassadors</a>
-            <a href="EventRedar.html">Event Radar</a>
-            <a href="helpfix.html">HelpFix</a>
-            <a href="dedication.html">Dedication</a>
+            <a href='/'>Home</a>
+            <a href='/ambassadors'>Our Ambassadors</a>
+            <a href='/eventredar'>Event Radar</a>
+            <a href='/helpfix'>HelpFix</a>
+            <a href='/dedication'>Dedication</a>
         </div>
         <div class="burger-menu" onclick="toggleMenu()">
             <div></div>
@@ -317,13 +317,17 @@
                 const front = document.createElement("div");
                 front.classList.add("front");
 
+                let badgesHTML = "";
+                for (let i = 15; i <= 18; i++) {
+                    if (row[i]) { // Ensure there's a valid badge link
+                        badgesHTML += `<div class="badge"><img src="${row[i]}" alt="Badge"></div>`;
+                    }
+                }
+
+
                 front.innerHTML = `
                     <div class="badges-container">
-                        <div class="badge"><img src="https://lh3.googleusercontent.com/a/ACg8ocJeQ7G4BKaJsF5mZex5Mn0vRXjSOEVPEb0I15PYIX5HDxU1-Jo=s360-c-no" alt=""></div>
-                        <div class="badge"><img src="https://lh3.googleusercontent.com/a/ACg8ocJeQ7G4BKaJsF5mZex5Mn0vRXjSOEVPEb0I15PYIX5HDxU1-Jo=s360-c-no" alt=""></div>
-                        <div class="badge"><img src="https://lh3.googleusercontent.com/a/ACg8ocJeQ7G4BKaJsF5mZex5Mn0vRXjSOEVPEb0I15PYIX5HDxU1-Jo=s360-c-no" alt=""></div>
-                        <div class="badge"><img src="https://lh3.googleusercontent.com/a/ACg8ocJeQ7G4BKaJsF5mZex5Mn0vRXjSOEVPEb0I15PYIX5HDxU1-Jo=s360-c-no" alt=""></div>
-                        <div class="badge"><img src="https://lh3.googleusercontent.com/a/ACg8ocJeQ7G4BKaJsF5mZex5Mn0vRXjSOEVPEb0I15PYIX5HDxU1-Jo=s360-c-no" alt=""></div>
+                    ${badgesHTML}
                     </div>
                     <h1>${row[0]}</h1>
                     <p>Enroll No: ${row[2]}</p>
@@ -344,6 +348,8 @@
     <p>${row[7]}</p>
     <h3>Contact</h3>
     <p>Email: <a href="mailto:${row[8]}?subject=Asking%20for%20collaboration%20(KeyzChain)&body=Hi%20there,%0A%0AHow%20are%20you?">${row[8]}</a></p>
+    <button class="chat-now-btn" onclick="window.open('https://discord.com/users/${row[10]}', '_blank')">Chat Now</button>
+    <button class="chat-now-btn" onclick="window.open('${row[1]}', '_blank')">LinkedIn</button>
 `;
 
                 card.appendChild(front);
@@ -352,6 +358,31 @@
                 cardContainer.appendChild(flipContainer);
             });
         }
+        document.head.insertAdjacentHTML('beforeend', `
+    <style>
+        .chat-now-btn {
+            margin: 10px;
+            background-color: #0066cc;
+            color: #fef9e4;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .chat-now-btn:hover {
+            background-color: #d1ad6b;
+            transform: scale(1.1);
+        }
+        @media (max-width: 768px) {
+            .chat-now-btn {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+`);
 
         // Function to toggle card flip
         function toggleFlip(flipContainer) {
