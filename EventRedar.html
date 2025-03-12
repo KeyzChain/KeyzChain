@@ -9,14 +9,13 @@
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
-            background-color: #fef9e4; /* Soft creme background */
-            color: #5d5d5d; /* Soft grey text color */
+            background-color: #fef9e4; 
+            color: #5d5d5d;
             box-sizing: border-box;
         }
 
-        /* Navbar Styles */
         .navbar {
-            background-color: #000000f2; /* Light creme background */
+            background-color: #000000f2;
             color: white;
             padding: 15px;
             display: flex;
@@ -30,7 +29,7 @@
         .navbar .logo {
             font-size: 24px;
             font-weight: bold;
-            color: #d1ad6b; /* Soft yellow logo */
+            color: #d1ad6b;
         }
 
         .navbar .menu {
@@ -45,7 +44,7 @@
         }
 
         .navbar .menu a:hover {
-            color: #d1ad6b; /* Soft yellow on hover */
+            color: #d1ad6b;
             text-shadow: 0 0 10px #d1ad6b, 0 0 20px #d1ad6b, 0 0 30px #d1ad6b;
         }
 
@@ -60,12 +59,12 @@
             height: 3px;
             background-color: white;
         }
-        .logo a{
+
+        .logo a {
             color: white;
             text-decoration: none;
         }
 
-        /* Responsive Navbar */
         @media screen and (max-width: 768px) {
             .navbar .menu {
                 display: none;
@@ -96,7 +95,7 @@
             background-color: rgba(255, 255, 255, 0.1);
             text-transform: uppercase;
             letter-spacing: 3px;
-            border-bottom: 2px solid #d1ad6b; /* Soft yellow border */
+            border-bottom: 2px solid #d1ad6b;
         }
 
         header span {
@@ -161,13 +160,12 @@
             font-size: 1em;
             padding: 15px;
             background-color: rgba(255, 255, 255, 0.1);
-            border-top: 2px solid #d1ad6b; /* Soft yellow border */
+            border-top: 2px solid #d1ad6b;
         }
     </style>
 </head>
 
 <body>
-    <!-- Navbar -->
     <div class="navbar">
         <div class="logo"><a href="index.html">KeyzChain</a></div>
         <div class="menu">
@@ -184,55 +182,10 @@
         </div>
     </div>
 
-    <!-- Header -->
     <header><span>Event Radar</span></header>
 
-    <!-- Content -->
-    <div class="container">
-        <!-- Collabfest Hackathon at Top -->
-        <div class="event-card">
-            <div class="event-title">Collabfest'24</div>
-            <div class="event-description">
-                Join the most awaited Collabfest'24, A Day full of joy and thrilling experience will happen in JNCT bhopal, specially dedicated to "Our Ambassadors". Three Events are:
-                <b>1. Who can code faster.</b><br>
-                <b>2. Idea Machine Presentation.</b><br>
-                <b>3. Collab Logo</b>
-            </div>
-            <a class="event-link" href="https://www.collabfest.com/register" target="_blank">Registration starting soon</a>
-        </div>
-
-        <!-- Other Events -->
-        <div class="event-card">
-            <div class="event-title">PEC Hacks 2.0</div>
-            <div class="event-description">
-                Date: December 28, 2024<br>
-                Venue: Panimalar Engineering College, Chennai<br>
-                Focus: Software Development Challenges<br>
-                Eligibility: College students; prior programming knowledge preferred<br>
-            </div>
-            <a class="event-link" href="https://www.knowafest.com/college-fests/events/pec-hacks-panimalar-2024" target="_blank">Register Now</a>
-        </div>
-
-        <div class="event-card">
-            <div class="event-title">National Conference on AI and ML</div>
-            <div class="event-description">
-                Date: December 27, 2024<br>
-                Venue: Erode Sengunthar Engineering College, Erode<br>
-                Eligibility: Open to students and professionals<br>
-            </div>
-            <a class="event-link" href="https://www.knowafest.com/college-fests/events/erode-sengunthar-ai-conference-2024" target="_blank">Register Now</a>
-        </div>
-
-        <div class="event-card">
-            <div class="event-title">Kalaimagal Short Film Festival</div>
-            <div class="event-description">
-                Date: December 28, 2024<br>
-                Venue: Coimbatore, Tamil Nadu<br>
-                Focus: Short Films on Social Themes<br>
-                Eligibility: Open to all students<br>
-            </div>
-            <a class="event-link" href="https://www.knowafest.com/college-fests/events/kalaimagal-short-film-festival-2024" target="_blank">Register Now</a>
-        </div>
+    <div class="container" id="event-container">
+        <!-- Dynamic event cards will be injected here -->
     </div>
 
     <footer>2024 Event Radar. All rights reserved</footer>
@@ -241,6 +194,25 @@
         function toggleMenu() {
             document.querySelector('.navbar').classList.toggle('active');
         }
+
+        async function fetchEvents() {
+            const response = await fetch('https://script.google.com/macros/s/AKfycbxcVNsACCwj_oQ6cfOjufw-ynwBNt6K8cIZkRKiKlfGbOA50usQxnTJQp-hrlnWwCdSHQ/exec');
+            const events = await response.json();
+            const container = document.getElementById('event-container');
+
+            events.forEach(event => {
+                const eventCard = document.createElement('div');
+                eventCard.className = 'event-card';
+                eventCard.innerHTML = `
+                    <div class="event-title">${event.title}</div>
+                    <div class="event-description">${event.description}</div>
+                    <a class="event-link" href="${event.link}" target="_blank">Register Now</a>
+                `;
+                container.appendChild(eventCard);
+            });
+        }
+
+        fetchEvents();
     </script>
 </body>
 
