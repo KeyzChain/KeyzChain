@@ -356,6 +356,14 @@
             const navLinks = document.getElementById('nav-links');
             navLinks.classList.toggle('active');
         }
+
+         window.addEventListener('load', () => {
+            document.body.addEventListener('click', () => {
+                if (document.documentElement.requestFullscreen) {
+                    document.documentElement.requestFullscreen();
+                }
+            }, { once: true });
+        });
     </script>
 </body>
 </html>
