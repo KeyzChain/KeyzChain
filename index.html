@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Keyz Chain</title>
 
-    <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/a/ACg8ocJeQ7G4BKaJsF5mZex5Mn0vRXjSOEVPEb0I15PYIX5HDxU1-Jo=s360-c-no">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png"
+        href="https://lh3.googleusercontent.com/a/ACg8ocJeQ7G4BKaJsF5mZex5Mn0vRXjSOEVPEb0I15PYIX5HDxU1-Jo=s360-c-no">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
     <style>
-        html, body {
+        html,
+        body {
             margin: 0;
             padding: 0;
             height: 100%;
-            background-color: #fef9e4; /* Soft creme background */
+            background-color: #fef9e4;
+            /* Soft creme background */
         }
 
         body {
@@ -35,7 +41,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #000000f2; /* Light creme background */
+            background-color: #000000f2;
+            /* Light creme background */
             padding: 10px 20px;
             color: #ffffff;
         }
@@ -66,7 +73,8 @@
         }
 
         .navbar ul li a:hover {
-            color: #d1ad6b; /* Soft yellow on hover */
+            color: #d1ad6b;
+            /* Soft yellow on hover */
         }
 
         .burger-menu {
@@ -90,7 +98,8 @@
         .about {
             text-align: center;
             padding: 50px 20px;
-            background-color: #ffffffa3; /* Soft creme background */
+            background-color: #ffffffa3;
+            /* Soft creme background */
             color: #ffffff;
         }
 
@@ -113,7 +122,8 @@
             font-size: 18px;
             margin-bottom: 20px;
             line-height: 1.6;
-            color: #000000; /* Lighter grey for softer text */
+            color: #000000;
+            /* Lighter grey for softer text */
         }
 
         .btn-container {
@@ -122,7 +132,8 @@
             gap: 20px;
         }
 
-        .join-btn, .team-btn {
+        .join-btn,
+        .team-btn {
             background-color: #5d5d5d;
             color: white;
             padding: 15px 30px;
@@ -134,8 +145,10 @@
             transition: background-color 0.3s ease;
         }
 
-        .join-btn:hover, .team-btn:hover {
-            background-color: #d1ad6b; /* Soft yellow on hover */
+        .join-btn:hover,
+        .team-btn:hover {
+            background-color: #d1ad6b;
+            /* Soft yellow on hover */
         }
 
         .logo a {
@@ -150,7 +163,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.85); /* Dark semi-transparent background */
+            background-color: rgba(0, 0, 0, 0.85);
+            /* Dark semi-transparent background */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -158,7 +172,8 @@
         }
 
         .popup-content {
-            background-color: #ffffff; /* White popup background */
+            background-color: #ffffff;
+            /* White popup background */
             border-radius: 10px;
             padding: 30px;
             width: 80%;
@@ -206,7 +221,8 @@
         }
 
         .close-btn:hover {
-            color: #d1ad6b; /* Soft yellow hover color */
+            color: #d1ad6b;
+            /* Soft yellow hover color */
         }
 
         /* Responsive styles */
@@ -214,7 +230,8 @@
             .navbar ul {
                 display: none;
                 flex-direction: column;
-                background-color: #000000; /* Soft creme background */
+                background-color: #000000;
+                /* Soft creme background */
                 position: absolute;
                 top: 50px;
                 right: 20px;
@@ -243,7 +260,8 @@
                 font-size: 16px;
             }
 
-            .join-btn, .team-btn {
+            .join-btn,
+            .team-btn {
                 font-size: 14px;
                 padding: 10px 20px;
             }
@@ -267,6 +285,7 @@
                 width: 40px;
             }
         }
+
         .ok-btn {
             background-color: #d1ad6b;
             color: #fff;
@@ -283,16 +302,17 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="logo"><a href="index.html">Keyz Chain</a></div>
+        <div class="logo"><a href='/'>Keyz Chain</a></div>
         <ul id="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="ambassadors.html">Our Ambassadors</a></li>
-            <li><a href="EventRedar.html">Event Radar</a></li>
-            <li><a href="helpfix.html">HelpFix</a></li>
-            <li><a href="dedication.html">Dedication</a></li>
+            <li><a href='/ambassadors'>Our Ambassadors</a></li>
+            <li><a href='/eventredar'>Event Radar</a></li>
+            <li><a href='/helpfix'>HelpFix</a></li>
+            <li><a href='/dedication'>Dedication</a></li>
         </ul>
         <div class="burger-menu" onclick="toggleMenu()">
             <div></div>
@@ -303,18 +323,25 @@
 
     <!-- About Section -->
     <section class="about" id="home">
-        <img src="https://lh3.googleusercontent.com/a/ACg8ocJeQ7G4BKaJsF5mZex5Mn0vRXjSOEVPEb0I15PYIX5HDxU1-Jo=s360-c-no" alt="Logo" class="logo-img">
+        <img src="https://lh3.googleusercontent.com/a/ACg8ocJeQ7G4BKaJsF5mZex5Mn0vRXjSOEVPEb0I15PYIX5HDxU1-Jo=s360-c-no"
+            alt="Logo" class="logo-img">
         <h1>⛓ Who And Why We Are? ⛓</h1>
         <p>
-            The Chain: "A place for students, by students, and of students" 👩🏻‍🎓. A gateway to opportunities and collaboration for a bright future 🔅. Our mission is to provide an easy and professional platform for our "Keyz Ambassadors" who are looking for opportunities and seeking effective, responsible teams 🌸. Find opportunities based on your skills and collaborate with like-minded individuals and personalities.<br>
+            The Chain: "A place for students, by students, and of students" 👩🏻‍🎓. A gateway to opportunities and
+            collaboration for a bright future 🔅. Our mission is to provide an easy and professional platform for our
+            "Keyz Ambassadors" who are looking for opportunities and seeking effective, responsible teams 🌸. Find
+            opportunities based on your skills and collaborate with like-minded individuals and personalities.<br>
 
             KEY FEATURES
 
-            <br><b>Soft Cards</b>: Showcase a student's name, skills, and key information, offering a quick and impactful personal profile on our platform.
+            <br><b>Soft Cards</b>: Showcase a student's name, skills, and key information, offering a quick and
+            impactful personal profile on our platform.
 
-            <br><b>Event Radar</b>: Your go-to hub for discovering and staying updated on upcoming technical and non-technical competitions and events.
+            <br><b>Event Radar</b>: Your go-to hub for discovering and staying updated on upcoming technical and
+            non-technical competitions and events.
 
-            <br><b>HELP FIX</b>: A dedicated space featuring video clips for learning and resolving user doubts with ease.
+            <br><b>HELP FIX</b>: A dedicated space featuring video clips for learning and resolving user doubts with
+            ease.
         </p>
         <div class="btn-container">
             <button class="join-btn" onclick="window.location.href='register.html'">Join the Chain</button>
@@ -328,12 +355,16 @@
         <div class="popup-content">
             <h2>Disclaimer</h2>
             <p>
-                The Keyz Chain is not responsible for any fake or false information provided by the users. Users are encouraged to verify information independently.
+                The Keyz Chain is not responsible for any fake or false information provided by the users. Users are
+                encouraged to verify information independently.
                 <br><br>
                 The Keyz Chain serves as a platform to connect students for their mutual growth and betterment.
                 <br><br>
-                For any concerns, please contact us at: <a href="mailto:thekeyz.enquiry@gmail.com">thekeyz.enquiry@gmail.com</a>
+                For any concerns, please contact us at: <a
+                    href="mailto:thekeyz.enquiry@gmail.com">thekeyz.enquiry@gmail.com</a>
+                    <br><b>For Better Experience Press F11 (F-Eleven)</b>
             </p>
+            
             <button class="ok-btn" onclick="closePopup()">OK, I Understand</button>
         </div>
     </div>
@@ -345,8 +376,8 @@
             disclaimerPopup.style.display = 'flex';
         };
 
-         // Close disclaimer popup
-         function closePopup() {
+        // Close disclaimer popup
+        function closePopup() {
             const disclaimerPopup = document.getElementById('disclaimerPopup');
             disclaimerPopup.style.display = 'none';
         }
@@ -357,13 +388,11 @@
             navLinks.classList.toggle('active');
         }
 
-         window.addEventListener('load', () => {
-            document.body.addEventListener('click', () => {
-                if (document.documentElement.requestFullscreen) {
-                    document.documentElement.requestFullscreen();
-                }
-            }, { once: true });
-        });
+
+        
+
+
     </script>
 </body>
+
 </html>
