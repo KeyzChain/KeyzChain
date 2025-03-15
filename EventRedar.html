@@ -8,7 +8,11 @@
         <link rel="icon" type="image/png"
         href="https://lh3.googleusercontent.com/a/ACg8ocJeQ7G4BKaJsF5mZex5Mn0vRXjSOEVPEb0I15PYIX5HDxU1-Jo=s360-c-no">
     <style>
+        *{
+            scrollbar-color: #d1ad6b #fef9e4;
+        }
         body {
+            cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><text y="32" font-size="32">🔑</text></svg>') 16 16, auto;
             margin: 0;
             font-family: 'Poppins', sans-serif;
             background-color: #fef9e4; 
@@ -164,6 +168,37 @@
             background-color: rgba(255, 255, 255, 0.1);
             border-top: 2px solid #d1ad6b;
         }
+        /* Skeleton Loader Styles */
+        .skeleton {
+            width: calc(33.333% - 20px);
+            height: 50vh;
+            margin: 10px;
+            background: linear-gradient(90deg, #e0e0e0 25%, #fef9e4 50%, #e0e0e0 75%);
+            background-size: 200% 100%;
+            border-radius: 15px;
+            animation: shimmer 1.5s infinite;
+        }
+
+        @keyframes shimmer {
+            from {
+                background-position: 200% 0;
+            }
+            to {
+                background-position: -200% 0;
+            }
+        }
+        /* Responsive Cards */
+        @media (min-width: 1024px) {
+            .skeleton {
+                width: 98%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .skeleton {
+                width: 98%;
+            }
+        }
     </style>
 </head>
 
@@ -189,6 +224,12 @@
     <header><span>Event Radar</span></header>
 
     <div class="container" id="event-container">
+        <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
         <!-- Dynamic event cards will be injected here -->
     </div>
 
@@ -203,6 +244,7 @@
             const response = await fetch('https://script.google.com/macros/s/AKfycbxcVNsACCwj_oQ6cfOjufw-ynwBNt6K8cIZkRKiKlfGbOA50usQxnTJQp-hrlnWwCdSHQ/exec');
             const events = await response.json();
             const container = document.getElementById('event-container');
+            container.innerHTML = "";
 
             events.forEach(event => {
                 const eventCard = document.createElement('div');
