@@ -241,7 +241,7 @@
         }
 
         async function fetchEvents() {
-            const response = await fetch('https://script.google.com/macros/s/AKfycbxcVNsACCwj_oQ6cfOjufw-ynwBNt6K8cIZkRKiKlfGbOA50usQxnTJQp-hrlnWwCdSHQ/exec');
+            const response = await fetch('');//Google app script url here
             const events = await response.json();
             const container = document.getElementById('event-container');
             container.innerHTML = "";
@@ -263,3 +263,4 @@
 </body>
 
 </html>
+
